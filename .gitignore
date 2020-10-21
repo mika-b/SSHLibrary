@@ -8,6 +8,7 @@ dist
 *.swp
 results
 atest/testdata/keyfiles/id_rsa
+atest/testdata/keyfiles/id_rsa_back
 examples/output.xml
 examples/log.html
 examples/report.html

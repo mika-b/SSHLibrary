@@ -1,0 +1,28 @@
+version: "3"
+services:
+
+  robot:
+    build: ./robot
+    hostname: robot
+    networks:
+      - frontend
+    volumes:
+      - ../../:/robotframework-sshlibrary:Z
+  front:
+    build: ./front
+    hostname: front
+    ports:
+      - "2222:22"
+    networks:
+      - frontend
+      - backend
+
+  back:
+    build: ./back
+    hostname: back
+    networks:
+      - backend
+
+networks:
+  frontend:
+  backend:
