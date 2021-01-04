@@ -5,8 +5,8 @@ Test Teardown  Close All Connections
 
 *** Test Cases ***
 Read Until Prompt With Regexp Prompt
-    Open Connection  localhost  prompt=REGEXP:[$#]
-    Login  test  test
+    Open Connection  ${HOST}  prompt=REGEXP:[$#]
+    Login  ${USERNAME}  ${PASSWORD}
     Write  pwd
     ${output}=	Read Until Prompt
     Should Contain	${output}  $
@@ -16,8 +16,8 @@ Read Until Prompt With Regexp Prompt
     [Teardown]  Close connection
 
 Set Client Configuration With Regexp Prompt
-    Open Connection  localhost  prompt=$
-    Login  test  test
+    Open Connection  ${HOST}  prompt=$
+    Login  ${USERNAME}  ${PASSWORD}
     Write  pwd
     ${output}=	Read Until Prompt
     Should Contain	${output}  $
