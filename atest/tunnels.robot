@@ -49,7 +49,7 @@ Local Tunnel SSH
     Login  ${USERNAME}  ${PASSWORD}
     Create Local SSH Tunnel  ${LOCAL SSH PORT}  ${HOST}  ${DEFAULT SSH PORT}
     Port Should Not Be Free  ${LOCAL SSH PORT}
-    Open Connection  ${HOST}  port=${LOCAL SSH PORT}
+    Open Connection  localhost  port=${LOCAL SSH PORT}
     Login  ${USERNAME}  ${PASSWORD}
     Execute Command   ls
 
