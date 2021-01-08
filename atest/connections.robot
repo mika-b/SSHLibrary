@@ -2,6 +2,7 @@
 Default Tags   pybot   jybot
 Resource       resources/common.robot
 Test Teardown  Close All Connections
+Library  OperatingSystem
 
 *** Test Cases ***
 Open Connection
@@ -137,6 +138,8 @@ Write Bare In Teardown Should Not Hang If Auth Failed
 
 Login With Agent
    [Tags]  pybot
+   Should Not Be Empty  %{SSH_AGENT_PID}
+   Run Keyword If  ${DOCKER}  Run  ssh-add ~/.ssh/id_rsa
    Open Connection  ${HOST}
    Login  ${KEY USERNAME}  allow_agent=True
 
